@@ -23,6 +23,8 @@ for string in my_list:
         new_list.append(string)
 
 print(new_list)
+
+
 # 3. Наведено список рядків my_list. Створити новий список до якого помістити
 # елементи з my_list, у яких є символ - буква "a" на будь-якому місці.
 my_list = ["aloha", "ahaha", "count", "Mykola"]
@@ -34,16 +36,29 @@ for string in my_list:
         new_list.append(string)
 
 print(new_list)
+
+
 # 4) Даний список словників людей у форматі [{"name": "John", "age": 15}, ..., {"name": "Jack", "age": 45}]
 # а) Створити список і помістити туди ім'я наймолодшої людини. Якщо вік збігається – помістити всі імена наймолодших.
 # б) Створити список та помістити туди найдовше ім'я. Якщо довжина імені збігається - помістити такі імена.
 # в) Порахувати середню вік усіх людей із початкового списку.
 # persons
+#A))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 people = [{"name": "John", "age": 15}, {"name": "Countman", "age": 20}, {"name": "Jack", "age": 45}]
 min_age = min(people, key=lambda person: person["age"])["age"]
 youngest_names = [person["name"] for person in people if person["age"] == min_age]
-
 print(youngest_names)
+#Б))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+people = [{"name": "John", "age": 15}, {"name": "Countman", "age": 20}, {"name": "Jack", "age": 45}]
+max_name_length = max(len(person["name"]) for person in people)
+longest_names = [person["name"] for person in people if len(person["name"]) == max_name_length]
+print(longest_names)
+#В)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+people = [{"name": "John", "age": 15}, {"name": "Countman", "age": 20}, {"name": "Jack", "age": 45}]
+average_age = sum(person["age"] for person in people) / len(people)
+print(average_age)
+
+
 #5) Дано два словники my_dict_1 і my_dict_2.
 # а) Створити список із ключів, які є в обох словниках.
 # б) Створити список із ключів, які є у першому, але немає у другому словнику.
